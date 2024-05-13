@@ -13,12 +13,9 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchCars = async () => {
       try {
-        const { data } = await axios.get(
-          "https://fourwheel-backend-for-render.onrender.com/api/v1/cars/",
-          {
-            withCredentials: true,
-          }
-        );
+        const { data } = await axios.get("http://localhost:3601/api/v1/cars/", {
+          withCredentials: true,
+        });
         setCars(data.cars);
       } catch (error) {
         setCars([]);
@@ -31,7 +28,7 @@ const Dashboard = () => {
     const fetchTestDrives = async () => {
       try {
         const { data } = await axios.get(
-          "https://fourwheel-backend-for-render.onrender.com/api/v1/testdrive/",
+          "http://localhost:3601/api/v1/testdrive/",
           { withCredentials: true }
         );
         setTestDrive(data.requestedTestDrive);
@@ -46,7 +43,7 @@ const Dashboard = () => {
   const handleUpdateStatus = async (testDriveId, status) => {
     try {
       const { data } = await axios.put(
-        `https://fourwheel-backend-for-render.onrender.com/api/v1/testdrive/updatestatus/${testDriveId}`,
+        `http://localhost:3601/api/v1/testdrive/updatestatus/${testDriveId}`,
         { status },
         { withCredentials: true }
       );
@@ -64,7 +61,7 @@ const Dashboard = () => {
   const handleDelete = async (id) => {
     try {
       const { data } = await axios.delete(
-        `https://fourwheel-backend-for-render.onrender.com/api/v1/testdrive/delete/${id}`,
+        `http://localhost:3601/api/v1/testdrive/delete/${id}`,
         { withCredentials: true }
       );
 

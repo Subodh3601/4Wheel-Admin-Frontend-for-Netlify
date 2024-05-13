@@ -13,7 +13,7 @@ const Messages = () => {
     const fetchMessages = async () => {
       try {
         const { data } = await axios.get(
-          "https://fourwheel-backend-for-render.onrender.com/api/v1/message/getall",
+          "http://localhost:3601/api/v1/message/getall",
           { withCredentials: true }
         );
         setMessages(data.message);
@@ -27,7 +27,7 @@ const Messages = () => {
   const handleDelete = async (id) => {
     try {
       const { data } = await axios.delete(
-        `https://fourwheel-backend-for-render.onrender.com/api/v1/message/delete/${id}`,
+        `http://localhost:3601/api/v1/message/delete/${id}`,
         { withCredentials: true }
       );
 

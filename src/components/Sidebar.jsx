@@ -17,12 +17,9 @@ const Sidebar = () => {
 
   const handleLogout = async () => {
     await axios
-      .get(
-        "https://fourwheel-backend-for-render.onrender.com/api/v1/user/admin/logout",
-        {
-          withCredentials: true,
-        }
-      )
+      .get("http://localhost:3601/api/v1/user/admin/logout", {
+        withCredentials: true,
+      })
       .then((res) => {
         toast.success(res.data.message);
         setIsAuthenticated(false);

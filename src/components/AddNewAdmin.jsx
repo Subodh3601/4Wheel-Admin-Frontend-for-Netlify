@@ -20,7 +20,7 @@ const AddNewAdmin = () => {
     try {
       await axios
         .post(
-          "https://fourwheel-backend-for-render.onrender.com/api/v1/user/admin/addnew",
+          "http://localhost:3601/api/v1/user/admin/addnew",
           { firstname, lastname, email, phone, password },
           {
             withCredentials: true,
